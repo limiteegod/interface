@@ -1,9 +1,9 @@
 var mysql = require('mysql');
-var prop = require('./app/config/prop.js');
+var prop = require('./app/config/Prop.js');
 
 var conn = mysql.createConnection(prop.mysql);
 conn.connect();
-conn.query('select id,name from user', function(err, rows, fields) {
+conn.query('select _id,name from user', function(err, rows, fields) {
     if (err) throw err;
     for(var i = 0; i < fields.length; i++){
         console.log(fields[i]);
